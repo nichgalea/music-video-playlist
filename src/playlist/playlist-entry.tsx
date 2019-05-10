@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import cx from "classnames";
 
-import { MusicVideo } from "models";
+import { MusicVideo } from "src/models";
 
 import styles from "./styles.scss";
 

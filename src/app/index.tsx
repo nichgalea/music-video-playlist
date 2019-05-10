@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import { MusicVideo } from "models";
-import VideoPlayer from "video-player";
-import Playlist from "playlist";
+import { MusicVideo } from "src/models";
+import VideoPlayer from "src/video-player";
+import Playlist from "src/playlist";
 
 import styles from "./styles.scss";
 

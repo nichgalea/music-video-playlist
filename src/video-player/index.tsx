@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { MusicVideo } from "models";
+import { MusicVideo } from "src/models";
 
 import styles from "./styles.scss";
 import { parseConfigFileTextToJson } from "typescript";
