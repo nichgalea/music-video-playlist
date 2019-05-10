@@ -1,0 +1,38 @@
+.playlist {
+  width: 360px;
+  padding: 16px;
+
+  h3 {
+    margin: 0 0 16px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 8px 0;
+      cursor: pointer;
+
+      &.now-playing {
+        padding: 4px;
+        border: 2px solid lime;
+      }
+    }
+  }
+}
+
+.now-playing-text {
+  font-size: 10px;
+  color: lime;
+  margin-bottom: 8px;
+}
+
+.song-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.artist {
+  font-size: 16px;
+}

@@ -1,4 +1,5 @@
 export interface MusicVideo {
-  name: string;
+  title: string;
+  artist: string;
   url: string;
 }
