@@ -39,6 +39,14 @@ export default class Playlist extends Component<Props> {
           </button>
         </div>
 
+        {this.props.playlist.length === 0 ? (
+          <div className={styles.emptyPlaylist}>
+            <div className={styles.sadFace}>:(</div>
+            <p>You don't have anything in your playlist!</p>
+            <p>Add a video from the form below!</p>
+          </div>
+        ) : null}
+
         <ul>
           {this.props.playlist.map((v, i) => (
             <PlaylistEntry

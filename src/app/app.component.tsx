@@ -13,7 +13,6 @@ interface Props {
 
 interface State {
   currentIndex: number;
-  shuffled: boolean;
 }
 
 export default class App extends Component<Props, State> {
@@ -21,15 +20,13 @@ export default class App extends Component<Props, State> {
     super(props);
 
     this.state = {
-      currentIndex: 0,
-      shuffled: false
+      currentIndex: 0
     };
 
     this.handleVideoEnd = this.handleVideoEnd.bind(this);
     this.loadPreviousVideo = this.loadPreviousVideo.bind(this);
     this.loadNextVideo = this.loadNextVideo.bind(this);
     this.change = this.change.bind(this);
-    this.handleShuffle = this.handleShuffle.bind(this);
   }
 
   render() {
@@ -69,9 +66,5 @@ export default class App extends Component<Props, State> {
   loadNextVideo() {
     const nextIndex = (this.state.currentIndex + 1) % this.props.playlist.length;
     this.setState({ currentIndex: nextIndex });
-  }
-
-  handleShuffle() {
-    this.setState({ shuffled: !this.state.shuffled });
   }
 }

@@ -93,3 +93,14 @@
     transform: rotate(-45deg) translate(6px, 6px);
   }
 }
+
+.empty-playlist {
+  text-align: center;
+}
+
+.sad-face {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 40px;
+  transform: rotateZ(90deg);
+}
