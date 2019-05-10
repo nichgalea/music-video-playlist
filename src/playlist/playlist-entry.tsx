@@ -10,6 +10,7 @@ interface Props {
   index: number;
   onClick(index: number): void;
   nowPlaying: boolean;
+  onRemove(index: number): void;
 }
 
 export default class PlayistEntry extends Component<Props> {
@@ -21,6 +22,7 @@ export default class PlayistEntry extends Component<Props> {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
   }
 
   componentDidMount() {
@@ -50,11 +52,16 @@ export default class PlayistEntry extends Component<Props> {
         {this.props.nowPlaying ? <div className={styles.nowPlayingText}>Now Playing</div> : null}
         <div className={styles.songTitle}>{this.props.video.title}</div>
         <div className={styles.artist}>{this.props.video.artist}</div>
+        <div className={styles.removeVideo} title="Remove" onClick={this.handleRemove} />
       </li>
     );
   }
 
   handleClick() {
     this.props.onClick(this.props.index);
+  }
+
+  handleRemove() {
+    this.props.onRemove(this.props.index);
   }
 }

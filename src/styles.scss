@@ -3,3 +3,11 @@ body {
   background: black;
   color: white;
 }
+
+input,
+button {
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}

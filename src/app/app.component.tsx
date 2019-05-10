@@ -13,6 +13,7 @@ interface Props {
 
 interface State {
   currentIndex: number;
+  shuffled: boolean;
 }
 
 export default class App extends Component<Props, State> {
@@ -20,12 +21,15 @@ export default class App extends Component<Props, State> {
     super(props);
 
     this.state = {
-      currentIndex: 0
+      currentIndex: 0,
+      shuffled: false
     };
 
     this.handleVideoEnd = this.handleVideoEnd.bind(this);
+    this.loadPreviousVideo = this.loadPreviousVideo.bind(this);
     this.loadNextVideo = this.loadNextVideo.bind(this);
     this.change = this.change.bind(this);
+    this.handleShuffle = this.handleShuffle.bind(this);
   }
 
   render() {
@@ -35,7 +39,14 @@ export default class App extends Component<Props, State> {
 
         <div className={styles.mainContent}>
           <VideoPlayer video={this.props.playlist[this.state.currentIndex]} onVideoEnd={this.handleVideoEnd} />
-          <Playlist current={this.state.currentIndex} onChange={this.change} />
+
+          <Playlist
+            current={this.state.currentIndex}
+            onChange={this.change}
+            onPrevious={this.loadPreviousVideo}
+            onNext={this.loadNextVideo}
+          />
+
           <VideoForm />
         </div>
       </div>
@@ -50,8 +61,17 @@ export default class App extends Component<Props, State> {
     this.setState({ currentIndex: index });
   }
 
+  loadPreviousVideo() {
+    const nextIndex = (this.state.currentIndex === 0 ? this.props.playlist.length : this.state.currentIndex) - 1;
+    this.setState({ currentIndex: nextIndex });
+  }
+
   loadNextVideo() {
     const nextIndex = (this.state.currentIndex + 1) % this.props.playlist.length;
     this.setState({ currentIndex: nextIndex });
+  }
+
+  handleShuffle() {
+    this.setState({ shuffled: !this.state.shuffled });
   }
 }
