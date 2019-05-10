@@ -1,0 +1,46 @@
+.video-form {
+  flex: 0 0 100%;
+}
+
+.video-form-input {
+  margin-bottom: 8px;
+
+  input {
+    box-sizing: border-box;
+    border: 2px solid white;
+    background: white;
+    padding: 16px;
+    color: black;
+    font-size: 16px;
+    width: 100%;
+
+    &:focus {
+      border: 2px solid lime;
+      outline: none;
+    }
+
+    &.error {
+      border: 2px solid crimson;
+    }
+  }
+}
+
+.add-button {
+  display: block;
+  margin-left: auto;
+  border: 0;
+  width: 300px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    outline: none;
+    background: darken(white, 10%);
+  }
+}

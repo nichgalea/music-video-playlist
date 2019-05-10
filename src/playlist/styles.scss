@@ -1,6 +1,6 @@
 .playlist {
-  width: 360px;
   padding: 16px;
+  flex: 0 0 328px;
 
   h3 {
     margin: 0 0 16px;
@@ -9,6 +9,8 @@
   ul {
     list-style: none;
     padding: 0;
+    height: 352px;
+    overflow: auto;
 
     li {
       margin: 8px 0;
