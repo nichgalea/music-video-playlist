@@ -30,12 +30,20 @@ export default class App extends Component<Props, State> {
   }
 
   render() {
+    let video = this.props.playlist[this.state.currentIndex];
+
+    // if there's only one video
+    if (this.props.playlist.length === 1) {
+      // renew the reference, otherwise the video won't play
+      video = { ...video };
+    }
+
     return (
       <div className={styles.app}>
         <h1>Music Video Player</h1>
 
         <div className={styles.mainContent}>
-          <VideoPlayer video={this.props.playlist[this.state.currentIndex]} onVideoEnd={this.handleVideoEnd} />
+          <VideoPlayer video={video} onVideoEnd={this.handleVideoEnd} />
 
           <Playlist
             current={this.state.currentIndex}
