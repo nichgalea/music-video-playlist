@@ -2,9 +2,6 @@ import { resolve } from "path";
 import { Configuration, DefinePlugin } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { TsConfigPathsPlugin } from "awesome-typescript-loader";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const basePath = resolve(__dirname, "src");
 
@@ -47,10 +44,6 @@ const config: Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       template: `${basePath}/index.html`
-    }),
-    new DefinePlugin({
-      API_URL: JSON.stringify("https://imvdb.com/api/"),
-      API_KEY: JSON.stringify(process.env.IMVDB_API_KEY)
     })
   ]
 };
